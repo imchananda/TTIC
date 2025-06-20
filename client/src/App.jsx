@@ -13,6 +13,8 @@ import Dashboard from './pages/admin/Dashboard'
 import AddBlog from './pages/admin/AddBlog'
 import ListBlog from './pages/admin/ListBlog'
 import Comments from './pages/admin/Comments'
+import Login from './components/admin/Login'
+import 'quill/dist/quill.snow.css'
 
 const App = () => {
   return (
@@ -27,7 +29,7 @@ const App = () => {
         <Route path ='/structure' element={<Structure/>} />
         <Route path ='/vision' element={<Vision/>} />
 
-        <Route path ='/admin' element={<Layout/>} > 
+        <Route path ='/admin' element={true ? <Layout/> : <Login/>} > 
           <Route index element ={<Dashboard/>}/>
           <Route path='addBlog' element ={<AddBlog/>}/>
           <Route path='listBlog' element ={<ListBlog/>}/>
